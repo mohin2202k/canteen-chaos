@@ -47,7 +47,7 @@ order screen round in different places.
 
 ## CC-01 — "The search suggestions menu stuck behind category tab"
 
-**Reproduced:** 	Searched om and the first suggestion was not visible. happened everytime when searching anything. 
+**Reproduced:** Searched om and the first suggestion was not visible. happened everytime when searching anything. 
 
 **Cause:** The z-index of cat-tabs class was 40 which caused it to be on top of everything else.
 
@@ -68,6 +68,18 @@ order screen round in different places.
 **Checked:** now when in dark mode, the both the prices and name were visible
 
 **Time:** about 15 minutes mostly to find the parent of btn-name.
+
+## CC-03 — "Had to scroll sideways just to see the full menu in mobile phones"
+
+**Reproduced:** When viewed in phone width in dev mode in browser, i had to scroll sideways to view the whole menu when the width was less than ~680px . First when i was trying to reproduce the bug, i faced a problem where the browser automatically zoomed out to fit the whole page in the specified width which caused me to not had to scroll sideways. I was stuck there. Then after some tinkering, i found that my auto adjust zoom was on under the zoom menu in dev mode. Disabling that fixed the issue and i got the specified bug. 
+
+**Cause:** the width of the .dish-card img was set to auto which sometimes made the img larger than the parent thus causing overflow and the width of .name-btn(the name of the dish inside the card) was set to max-content which made the name to take extra unwanted space int the dish-card and prevented it to shrink down. These two combined made the card to not shrink and take more space than the screen thus causing the scroll sideways problem. 
+
+**Fix:** set the width of .dish-card img and .name-btn to be 100% so it will always take the full space of the card and so that the card can shrink without any issues when the width of screen is less than 760px. when the width of the screen shrinks to 480px or less, the number of dish-cards drop down to 1 to prevent over shrinking of the card. 
+
+**Checked:** now when the screen width is between 760px(phone width) and 480px(small phones) the cards starts to shrink to fit two card and prevent the card to overflow to more than screen width. And when they reach 480px, only one card is shown to prevebt overshrinking of card.
+
+**Time:** about 15 minutes to mess around with the width settings of the card and its children to see what fits the best. 
 
 ## Could not fix
 

@@ -1253,11 +1253,11 @@ h3 {
   }
 
   .name-btn {
-    width: max-content;
+    width: 100%;
   }
 
   .dish-card img {
-    width: auto;
+    width: 100%;
     min-width: 100%;
     height: 170px;
     aspect-ratio: 3 / 2;
@@ -1945,8 +1945,8 @@ body.is-offline .site-header {
   .dish-card {
     position: relative;
   }
-
-  .dish-card::after,
+/* BUG 4 */
+  .dish-card::after, 
   .img-wrap::after {
     content: "";
     position: absolute;
