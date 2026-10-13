@@ -57,6 +57,17 @@ order screen round in different places.
 
 **Time:** about 5 minutes, found the class name through browser inspect, tried changing the z-index through there, then changed the styles.css to set z-index to 0.
 
+## CC-02 — "Can't read the prices and dish name in dark mode"
+
+**Reproduced:** When in dark mode, the  dish name and prices were not visible, they were in some gray color which wasnt visible with with the dark background in dark mode.
+
+**Cause:** in the parent of name-btn, the class of the name and prices, parent name: .dish-body, the color was set to hex code and not to the variable "ink" and the color of name-btn was set to inherit.
+
+**Fix:** set the color of name-btn to inherit. 
+
+**Checked:** now when in dark mode, the both the prices and name were visible
+
+**Time:** about 15 minutes mostly to find the parent of btn-name.
 
 ## Could not fix
 
