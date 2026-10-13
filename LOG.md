@@ -35,7 +35,7 @@ order screen round in different places.
 
 ## CC-0X — "<the complaint, in short>"
 
-**Reproduced:**
+**Reproduced:** 
 
 **Cause:**
 
@@ -45,6 +45,17 @@ order screen round in different places.
 
 **Time:**
 
+## CC-01 — "The search suggestions menu stuck behind category tab"
+
+**Reproduced:** 	Searched om and the first suggestion was not visible. happened everytime when searching anything. 
+
+**Cause:** The z-index of cat-tabs class was 40 which caused it to be on top of everything else.
+
+**Fix:** Changed the z-index of .cat-tabs to 0 inside style.css
+
+**Checked:** When searching something, the whole suggestion box is visible over the category tab.
+
+**Time:** about 5 minutes, found the class name through browser inspect, tried changing the z-index through there, then changed the styles.css to set z-index to 0.
 
 
 ## Could not fix
