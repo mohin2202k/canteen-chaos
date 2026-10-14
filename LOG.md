@@ -81,6 +81,30 @@ order screen round in different places.
 
 **Time:** about 15 minutes to mess around with the width settings of the card and its children to see what fits the best. 
 
+## CC-04 — "The add to cart and star button was not working in tablets"
+
+**Reproduced:** set the screen size to tablet in dev mode and tried clicking the add to cart and the star button. I wasnt able to click them.
+
+**Cause:** there were after psuedo classes on dish-card and img-wrap classes under a media query of min-width: 761px and max-width:900 px with no content in it with made an invisible overlay on the add to cart and star buttons which made them impossible to click through.
+
+**Fix:** removed those psuedo classes because I couldnt really think of any reason to include them and the site was responsive without them.
+
+**Checked:** now in tab width, i was able to click the add to cart and star button.
+
+**Time:** 30 mins. approx 10 to find what was causing the issue and another 20 to think of a case where it can be useful and test bunch of different cases to check if everything worked fine.
+
+## CC-0X — "<the complaint, in short>"
+
+**Reproduced:** 
+
+**Cause:**
+
+**Fix:**
+
+**Checked:**
+
+**Time:**
+
 ## Could not fix
 
 For anything you investigated but did not solve. Say what you tried and
